@@ -1,8 +1,9 @@
 services:
-  apache-services:
-    container_name: public-react-app
+  web:
     image: httpd:latest
     ports:
       - "80:80"
-    volumes:
-    - ./build:/usr/local/apache2/htdocs/
+  
+  db:
+    image: ubuntu
+    command: ["tail", "-f", "/dev/null"]
